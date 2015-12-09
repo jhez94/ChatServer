@@ -5,6 +5,7 @@ package edu.cmu.cs.cs214.chat.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Timestamp;
 
 import javax.swing.JTextField;
 
@@ -54,7 +55,8 @@ public class SendMessageListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent arg0) {
         // attempt to send message
-        if (chatClient.sendMessage(message.getText())) {
+    	java.util.Date date= new java.util.Date();
+        if (chatClient.sendMessage(new Timestamp(date.getTime()) + " " + message.getText())) {
             System.out.println(message.getText());
             // if the message was sent successfully, clear out the field
             message.setText("");
