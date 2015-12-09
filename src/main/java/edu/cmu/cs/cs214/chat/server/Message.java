@@ -16,7 +16,6 @@ public class Message implements Serializable {
     private String sender;
     private Date serverTimestamp;
 
-
     // TODO: Make the message also include a timestamp for when the server
     // received the message
 
